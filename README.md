@@ -1,3 +1,3 @@
 # Stoked-Custom-Web-Pages
 
-Web pages comissioned by Stoked in 2017
+Web applications comissioned by Stoked in 2017
