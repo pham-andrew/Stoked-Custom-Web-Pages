@@ -1,0 +1,631 @@
+<div id="theme" class="theme-default" style="text-align: left;">
+<p><em>Created by Andrew 'Fam' Pham, World Champion Bushing Eater</em><br> <em>Edited by David Rajewski, Bushing Eater Runner-Up</em></p>
+<!--Input Box-->
+<div class="weightform">
+<form id="form" method="post" onkeypress="return event.keyCode != 13;" onkeyup="func1()">
+<p><label for="amount">Enter weight</label></p>
+<div class="flex">
+<input id="amount" name="amount" type="text" maxlength="3"> <span id="weight" class="weight" onclick="func2()">lbs</span>
+</div>
+</form>
+</div>
+<!--End Input Box-->
+<p>Welcome to the Stoked Ultimate Bushing Calculator. The goal of this tool is to create the easiest to use bushing durometer calculator for any bushing brand out there. Simply put in your weight to the box and recommended ranges will appear. Click on the unit of weight to change from lbs to kgs.</p>
+<p><span>For reference, most reverse kingpin trucks come with approximately 90a as the stock bushing. Traditional kingpin trucks' bushings may start a little harder. </span></p>
+<p>These are just recommendations, but we feel they are great starting point.</p>
+<p><strong>One caveat:</strong> These recommendations are for <span style="text-decoration: underline;">general riding only</span>. For those that want to do specialized riding (such as LDP), the recommendations will be different.</p>
+<h2><a href="https://stoked.la/collections/vendors?q=RipTide%20Sports" target="_blank" title="RipTide Bushings" rel="noopener noreferrer">RipTide Bushings</a></h2>
+<p>RipTide is the most complete bushing company out there. They have tons of custom shapes and designs for just about every skateboard.</p>
+<h3><a href="https://stoked.la/products/riptide-aps-bushings-all-shapes-and-durometers" target="_blank" title="riptide aps bushings all shapes and durometers" rel="noopener noreferrer">RipTide APS</a></h3>
+<p>RipTide APS is the most "normal" bushing in the RipTide line up, but there is hardly anything normal about them. APS is designed to perform. Period. We recommend this bushing to anyone looking to get higher performance out of any skateboard truck.</p>
+<p><img src="//cdn.shopify.com/s/files/1/2175/4361/files/riptide-aps-bushings_cb741a1c-60ec-48b9-be84-cfa4fe982a29.jpg?v=1507145901" alt="RipTide APS Bushings"></p>
+<p>RipTide APS comes in a wide range of bushing durometers and shapes. They are best used for the general skateboarder, where no unique or special performance needs are required (other than getting gnargnar).</p>
+<!--Bushing Graph--> <!--Graph Stuff-->
+<div class="apsgraph">
+<ul class="lines">
+<li class="line l--0"><span class="line__label title"> Durometer: </span></li>
+<li class="line l--11"><span class="line__label"> 97.5a </span></li>
+<li class="line l--22"><span class="line__label"> 95a </span></li>
+<li class="line l--33"><span class="line__label"> 90a </span></li>
+<li class="line l--44"><span class="line__label"> 85a </span></li>
+<li class="line l--55"><span class="line__label"> 80a </span></li>
+<li class="line l--66"><span class="line__label"> 75a </span></li>
+<li class="line l--77"><span class="line__label"> 70a </span></li>
+<li class="line l--88"><span class="line__label"> 65a </span></li>
+<li class="line l--99"><span class="line__label"> 60a </span></li>
+</ul>
+<div id="charts" class="charts">
+<div class="chart--APS">
+<span class="chart__title">APS</span>
+<ul class="chart--horiz">
+<li class="chart__shapes">Street</li>
+<li class="chart__grey seven"><span class="chart__label"></span></li>
+<li class="chart__bar" data-skill="rt aps st"><span class="chart__label"></span></li>
+<li class="chart__shapes">Cone / Cone</li>
+<li class="chart__grey seven"><span class="chart__label"></span></li>
+<li class="chart__bar" data-skill="rt aps c c"><span class="chart__label"></span></li>
+<li class="chart__shapes">Barrel / Cone</li>
+<li class="chart__grey seven"><span class="chart__label"></span></li>
+<li class="chart__bar" data-skill="rt aps c b"><span class="chart__label"></span></li>
+<li class="chart__shapes">Barrel / Barrel</li>
+<li class="chart__grey seven"><span class="chart__label"></span></li>
+<li class="chart__bar" data-skill="rt aps b b"><span class="chart__label"></span></li>
+<li class="chart__shapes">Tall Cone / Cone</li>
+<li class="chart__grey seven"><span class="chart__label"></span></li>
+<li class="chart__bar" data-skill="rt aps tc c"><span class="chart__label"></span></li>
+<li class="chart__shapes">Tall Barrel / Cone</li>
+<li class="chart__grey seven"><span class="chart__label"></span></li>
+<li class="chart__bar" data-skill="rt aps tb c"><span class="chart__label"></span></li>
+<li class="chart__shapes">Tall Cone / Barrel</li>
+<li class="chart__grey seven"><span class="chart__label"></span></li>
+<li class="chart__bar" data-skill="rt aps tc b"><span class="chart__label"></span></li>
+<li class="chart__shapes">Tall Barrel / Barrel</li>
+<li class="chart__grey seven"><span class="chart__label"></span></li>
+<li class="chart__bar" data-skill="rt aps tb b"><span class="chart__label"></span></li>
+<li class="chart__shapes">Fatcone / Barrel</li>
+<li class="chart__grey seven"><span class="chart__label"></span></li>
+<li class="chart__bar" data-skill="rt aps fc b"><span class="chart__label"></span></li>
+<li class="chart__shapes">Chubby / Barrel</li>
+<li class="chart__grey seven"><span class="chart__label"></span></li>
+<li class="chart__bar" data-skill="rt aps ch b"><span class="chart__label"></span></li>
+</ul>
+</div>
+</div>
+</div>
+<!--End Bushing Graph-->
+<h3>RipTide WFB</h3>
+<p>RipTide WFB is a lubricated bushing designed for super fast turns and carves. WFB stands for "World's Fastest Bushing" for a good reason. The self-lubricating nature of these bushings leaves hardly any resistance so carving is incredibly fast.</p>
+<p><img src="//cdn.shopify.com/s/files/1/2175/4361/files/riptide-wfb-bushings.jpg?v=1507152756" alt="RipTide WFB Bushings"></p>
+<!--Bushing Graph--> <!--Graph Stuff-->
+<div class="wfbgraph">
+<ul class="lines">
+<li class="line l--0"><span class="line__label title"> Durometer: </span></li>
+<li class="line l--one7"><span class="line__label"> 95.5a </span></li>
+<li class="line l--two7"><span class="line__label"> 93a </span></li>
+<li class="line l--three7"><span class="line__label"> 88a </span></li>
+<li class="line l--four7"><span class="line__label"> 83a </span></li>
+<li class="line l--five7"><span class="line__label"> 78a </span></li>
+<li class="line l--six7"><span class="line__label"> 73a </span></li>
+<li class="line l--seven7"><span class="line__label"> 68a </span></li>
+</ul>
+<div id="charts" class="charts">
+<div class="chart--WFB">
+<span class="chart__title">WFB</span>
+<ul class="chart--horiz">
+<li class="chart__shapes">Street</li>
+<li class="chart__grey seven"><span class="chart__label"></span></li>
+<li class="chart__bar" data-skill="rt wfb st"><span class="chart__label"></span></li>
+<li class="chart__shapes">Cone / Cone</li>
+<li class="chart__grey seven"><span class="chart__label"></span></li>
+<li class="chart__bar" data-skill="rt wfb c c"><span class="chart__label"></span></li>
+<li class="chart__shapes">Barrel / Cone</li>
+<li class="chart__grey seven"><span class="chart__label"></span></li>
+<li class="chart__bar" data-skill="rt wfb c b"><span class="chart__label"></span></li>
+<li class="chart__shapes">Barrel / Barrel</li>
+<li class="chart__grey seven"><span class="chart__label"></span></li>
+<li class="chart__bar" data-skill="rt wfb b b"><span class="chart__label"></span></li>
+<li class="chart__shapes">Tall Cone / Cone</li>
+<li class="chart__grey seven"><span class="chart__label"></span></li>
+<li class="chart__bar" data-skill="rt wfb tc c"><span class="chart__label"></span></li>
+<li class="chart__shapes">Tall Barrel / Cone</li>
+<li class="chart__grey seven"><span class="chart__label"></span></li>
+<li class="chart__bar" data-skill="rt wfb tb c"><span class="chart__label"></span></li>
+<li class="chart__shapes">Tall Cone / Barrel</li>
+<li class="chart__grey seven"><span class="chart__label"></span></li>
+<li class="chart__bar" data-skill="rt wfb tc b"><span class="chart__label"></span></li>
+<li class="chart__shapes">Tall Barrel / Barrel</li>
+<li class="chart__grey seven"><span class="chart__label"></span></li>
+<li class="chart__bar" data-skill="rt wfb tb b"><span class="chart__label"></span></li>
+<li class="chart__shapes">Fatcone / Barrel</li>
+<li class="chart__grey seven"><span class="chart__label"></span></li>
+<li class="chart__bar" data-skill="rt wfb fc b"><span class="chart__label"></span></li>
+<li class="chart__shapes">Chubby / Barrel</li>
+<li class="chart__grey seven"><span class="chart__label"></span></li>
+<li class="chart__bar" data-skill="rt wfb ch b"><span class="chart__label"></span></li>
+</ul>
+</div>
+</div>
+</div>
+<!--End Bushing Graph-->
+<h3>RipTide KranK</h3>
+<p>RipTide KranK is designed to change with tightness. Board feeling a bit too loose? Give that kingpin nut a few turns and KranK will respond by getting harder. Want to ride a bit more loose? Take down the tension and KranK will carve like a dream.</p>
+<p><img src="//cdn.shopify.com/s/files/1/2175/4361/files/riptide-krank-bushings.jpg?v=1507152778" alt="RipTide KranK Bushings"></p>
+<!--Bushing Graph--> <!--Graph Stuff-->
+<div class="kkgraph">
+<ul class="lines">
+<li class="line l--0"><span class="line__label title"> Durometer: </span></li>
+<li class="line l--one5"><span class="line__label"> 96a </span></li>
+<li class="line l--two5"><span class="line__label"> 93a </span></li>
+<li class="line l--three5"><span class="line__label"> 90a </span></li>
+<li class="line l--four5"><span class="line__label"> 87a </span></li>
+<li class="line l--five5"><span class="line__label"> 84a </span></li>
+</ul>
+<div id="charts" class="charts">
+<div class="chart--kk">
+<span class="chart__title">KranK</span>
+<ul class="chart--horiz">
+<li class="chart__shapes">Street</li>
+<li class="chart__grey five"><span class="chart__label"></span></li>
+<li class="chart__bar" data-skill="rt krk st"><span class="chart__label"></span></li>
+<li class="chart__shapes">Cone / Cone</li>
+<li class="chart__grey five"><span class="chart__label"></span></li>
+<li class="chart__bar" data-skill="rt krk c c"><span class="chart__label"></span></li>
+<li class="chart__shapes">Barrel / Cone</li>
+<li class="chart__grey five"><span class="chart__label"></span></li>
+<li class="chart__bar" data-skill="rt krk c b"><span class="chart__label"></span></li>
+<li class="chart__shapes">Barrel / Barrel</li>
+<li class="chart__grey five"><span class="chart__label"></span></li>
+<li class="chart__bar" data-skill="rt krk b b"><span class="chart__label"></span></li>
+<li class="chart__shapes">Tall Cone / Cone</li>
+<li class="chart__grey five"><span class="chart__label"></span></li>
+<li class="chart__bar" data-skill="rt krk tc c"><span class="chart__label"></span></li>
+<li class="chart__shapes">Tall Barrel / Cone</li>
+<li class="chart__grey five"><span class="chart__label"></span></li>
+<li class="chart__bar" data-skill="rt krk tb c"><span class="chart__label"></span></li>
+<li class="chart__shapes">Tall Cone / Barrel</li>
+<li class="chart__grey five"><span class="chart__label"></span></li>
+<li class="chart__bar" data-skill="rt krk tc b"><span class="chart__label"></span></li>
+<li class="chart__shapes">Tall Barrel / Barrel</li>
+<li class="chart__grey five"><span class="chart__label"></span></li>
+<li class="chart__bar" data-skill="rt krk tb b"><span class="chart__label"></span></li>
+<li class="chart__shapes">Fatcone / Barrel</li>
+<li class="chart__grey five"><span class="chart__label"></span></li>
+<li class="chart__bar" data-skill="rt krk fc b"><span class="chart__label"></span></li>
+<li class="chart__shapes">Chubby / Barrel</li>
+<li class="chart__grey five"><span class="chart__label"></span></li>
+<li class="chart__bar" data-skill="rt krk ch b"><span class="chart__label"></span></li>
+</ul>
+</div>
+</div>
+</div>
+<!--End Bushing Graph-->
+<h2><a href="https://stoked.la/products/venom-bushings" target="_blank" title="venom bushings" rel="noopener noreferrer">Venom Bushings</a></h2>
+<p>Venom is the most famous longboard bushing brand. Their bushings have long been the staple of every longboarder's diet... I mean bushing setup. They fit most trucks and have a large variety of shapes and duros.</p>
+<p><img src="//cdn.shopify.com/s/files/1/2175/4361/files/venom-hpf-bushings.jpg?v=1507152819" alt="Venom High Performance Formula (HPF) Bushings"></p>
+<p>Their High Performance Formula is probably what most consider to be their "normal" formula.</p>
+<h3>High Performance Formula (HPF)</h3>
+<!--Bushing Graph--> <!--Graph Stuff-->
+<div class="hpfgraph">
+<ul class="lines">
+<li class="line l--0"><span class="line__label title"> Durometer: </span></li>
+<li class="line l--one8"><span class="line__label"> 97a </span></li>
+<li class="line l--two8"><span class="line__label"> 95a </span></li>
+<li class="line l--three8"><span class="line__label"> 93a </span></li>
+<li class="line l--four8"><span class="line__label"> 90a </span></li>
+<li class="line l--five8"><span class="line__label"> 87a </span></li>
+<li class="line l--six8"><span class="line__label"> 85a </span></li>
+<li class="line l--seven8"><span class="line__label"> 81a </span></li>
+<li class="line l--eight8"><span class="line__label"> 78a </span></li>
+</ul>
+<div id="charts" class="charts">
+<div class="chart--HPF">
+<span class="chart__title">HPF</span>
+<ul class="chart--horiz">
+<li class="chart__shapes">Street</li>
+<li class="chart__grey eight"><span class="chart__label"></span></li>
+<li class="chart__bar" data-skill="hpf str"><span class="chart__label"></span></li>
+<li class="chart__shapes">Supercarve</li>
+<li class="chart__grey eight"><span class="chart__label"></span></li>
+<li class="chart__bar" data-skill="hpf scv"><span class="chart__label"></span></li>
+<li class="chart__shapes">Standard</li>
+<li class="chart__grey eight"><span class="chart__label"></span></li>
+<li class="chart__bar" data-skill="hpf std"><span class="chart__label"></span></li>
+<li class="chart__shapes">Downhill</li>
+<li class="chart__grey eight"><span class="chart__label"></span></li>
+<li class="chart__bar" data-skill="hpf dh"><span class="chart__label"></span></li>
+<li class="chart__shapes">Freerides</li>
+<li class="chart__grey eight"><span class="chart__label"></span></li>
+<li class="chart__bar" data-skill="hpf fr"><span class="chart__label"></span></li>
+<li class="chart__shapes">Eliminator</li>
+<li class="chart__grey eight"><span class="chart__label"></span></li>
+<li class="chart__bar" data-skill="hpf elm"><span class="chart__label"></span></li>
+<li class="chart__shapes">Tall Kegs</li>
+<li class="chart__grey eight"><span class="chart__label"></span></li>
+<li class="chart__bar" data-skill="hpf keg"><span class="chart__label"></span></li>
+<li class="chart__shapes">Tall Barrels</li>
+<li class="chart__grey eight"><span class="chart__label"></span></li>
+<li class="chart__bar" data-skill="hpf tbr"><span class="chart__label"></span></li>
+</ul>
+</div>
+</div>
+</div>
+<!--End Bushing Graph-->
+<h3>Venom Super High Rebound (SHR)</h3>
+<p>Venom Super High Rebound formula brings you back to your center quickly after a turn. It's likely the most common formula used for downhill longboarding.</p>
+<p><img src="//cdn.shopify.com/s/files/1/2175/4361/files/venom-shr-bushings_3c5c7290-3ddc-4ef4-84a1-5e61fd5a26c0.jpg?v=1507152847" alt="Venom Super High Rebound (SHR) Formula Bushings"></p>
+<!--Bushing Graph--> <!--Graph Stuff-->
+<div class="shrgraph">
+<ul class="lines">
+<li class="line l--0"><span class="line__label title"> Durometer: </span></li>
+<li class="line l--one7"><span class="line__label"> 98a </span></li>
+<li class="line l--two7"><span class="line__label"> 94a </span></li>
+<li class="line l--three7"><span class="line__label"> 91a </span></li>
+<li class="line l--four7"><span class="line__label"> 88a </span></li>
+<li class="line l--five7"><span class="line__label"> 86a </span></li>
+<li class="line l--six7"><span class="line__label"> 83a </span></li>
+<li class="line l--seven7"><span class="line__label"> 80a </span></li>
+</ul>
+<div id="charts" class="charts">
+<div class="chart--shr">
+<span class="chart__title">SHR</span>
+<ul class="chart--horiz">
+<li class="chart__shapes">Street</li>
+<li class="chart__grey seven"><span class="chart__label"></span></li>
+<li class="chart__bar" data-skill="shr str"><span class="chart__label"></span></li>
+<li class="chart__shapes">Supercarve</li>
+<li class="chart__grey seven"><span class="chart__label"></span></li>
+<li class="chart__bar" data-skill="shr scv"><span class="chart__label"></span></li>
+<li class="chart__shapes">Standard</li>
+<li class="chart__grey seven"><span class="chart__label"></span></li>
+<li class="chart__bar" data-skill="shr std"><span class="chart__label"></span></li>
+<li class="chart__shapes">Downhill</li>
+<li class="chart__grey seven"><span class="chart__label"></span></li>
+<li class="chart__bar" data-skill="shr dh"><span class="chart__label"></span></li>
+<li class="chart__shapes">Freerides</li>
+<li class="chart__grey seven"><span class="chart__label"></span></li>
+<li class="chart__bar" data-skill="shr fr"><span class="chart__label"></span></li>
+<li class="chart__shapes">Eliminator</li>
+<li class="chart__grey seven"><span class="chart__label"></span></li>
+<li class="chart__bar" data-skill="shr elm"><span class="chart__label"></span></li>
+<li class="chart__shapes">Tall Barrels</li>
+<li class="chart__grey seven"><span class="chart__label"></span></li>
+<li class="chart__bar" data-skill="shr tbr"><span class="chart__label"></span></li>
+</ul>
+</div>
+</div>
+</div>
+<!--End Bushing Graph-->
+<h2>Oust Bushings</h2>
+<p><span>Oust bushings are on the pricey-er side but for good reason! Every product that Oust releases is high quality, made in the USA. Uber </span><span>bushings are manufactured using a blended pre-polymer urethane making them very resilient. </span></p>
+<p><span><img src="//cdn.shopify.com/s/files/1/2175/4361/files/oust-bushings.jpg?v=1507152879" alt="Oust Bushings"></span></p>
+<p><span>Oust Uber bushings are injection molded at 90,000 PSI making them the most internally consistent bushing. When compressed with 20,000 pounds of pressure for three minutes, they returned to original size after 27 seconds.</span></p>
+<!--Bushing Graph--> <!--Graph Stuff-->
+<div class="oustgraph">
+<ul class="lines">
+<li class="line l--0"><span class="line__label title"> Durometer: </span></li>
+<li class="line l--one5"><span class="line__label"> 95a </span></li>
+<li class="line l--two5"><span class="line__label"> 90a </span></li>
+<li class="line l--three5"><span class="line__label"> 85a </span></li>
+<li class="line l--four5"><span class="line__label"> 80a </span></li>
+<li class="line l--five5"><span class="line__label"> 75a </span></li>
+</ul>
+<div id="charts" class="charts">
+<div class="chart--oust">
+<span class="chart__title">Oust</span>
+<ul class="chart--horiz">
+<li class="chart__shapes">Short / Short</li>
+<li class="chart__grey five"><span class="chart__label"></span></li>
+<li class="chart__bar" data-skill="ost ss"><span class="chart__label"></span></li>
+<li class="chart__shapes">Short / Long</li>
+<li class="chart__grey five"><span class="chart__label"></span></li>
+<li class="chart__bar" data-skill="ost sl"><span class="chart__label"></span></li>
+<li class="chart__shapes">Short / Barrel</li>
+<li class="chart__grey five"><span class="chart__label"></span></li>
+<li class="chart__bar" data-skill="ost sb"><span class="chart__label"></span></li>
+<li class="chart__shapes">Long / Long</li>
+<li class="chart__grey five"><span class="chart__label"></span></li>
+<li class="chart__bar" data-skill="ost ll"><span class="chart__label"></span></li>
+<li class="chart__shapes">Barrel / Long</li>
+<li class="chart__grey five"><span class="chart__label"></span></li>
+<li class="chart__bar" data-skill="ost bl"><span class="chart__label"></span></li>
+<li class="chart__shapes">Barrel / Barrel</li>
+<li class="chart__grey five"><span class="chart__label"></span></li>
+<li class="chart__bar" data-skill="ost bb"><span class="chart__label"></span></li>
+</ul>
+</div>
+</div>
+</div>
+<!--End Bushing Graph-->
+<h2>Riot Bushings</h2>
+<p><span>Riot is an amazing longboarding brand run by Madison Atwood. He specializes in innovative and custom urethane accessories, doing all the jobs a custom skateboarder needs from board chops to insert bushings. </span></p>
+<p><span><img src="//cdn.shopify.com/s/files/1/2175/4361/files/riot-bushings.jpg?v=1507152904" alt="Riot Bushings"></span></p>
+<p><span>All Riot bushings are machined on a lathe creating very tight dimensional tolerances.</span></p>
+<!--Bushing Graph--> <!--Graph Stuff-->
+<div class="riotgraph">
+<ul class="lines">
+<li class="line l--0"><span class="line__label title"> Durometer: </span></li>
+<li class="line l--one8"><span class="line__label"> 100a </span></li>
+<li class="line l--two8"><span class="line__label"> 95a </span></li>
+<li class="line l--three8"><span class="line__label"> 92a </span></li>
+<li class="line l--four8"><span class="line__label"> 90a </span></li>
+<li class="line l--five8"><span class="line__label"> 87.5a </span></li>
+<li class="line l--six8"><span class="line__label"> 85a </span></li>
+<li class="line l--seven8"><span class="line__label"> 80a </span></li>
+<li class="line l--eight8"><span class="line__label"> 75a </span></li>
+</ul>
+<div id="charts" class="charts">
+<div class="chart--riot">
+<span class="chart__title">Riot</span>
+<ul class="chart--horiz">
+<li class="chart__shapes">Grind Barrels</li>
+<li class="chart__grey eight"><span class="chart__label"></span></li>
+<li class="chart__bar" data-skill="rot gsb"><span class="chart__label"></span></li>
+<li class="chart__shapes">Grind Top Cones</li>
+<li class="chart__grey eight"><span class="chart__label"></span></li>
+<li class="chart__bar" data-skill="rot gstc"><span class="chart__label"></span></li>
+<li class="chart__shapes">Grind Cones</li>
+<li class="chart__grey eight"><span class="chart__label"></span></li>
+<li class="chart__bar" data-skill="rot gsc"><span class="chart__label"></span></li>
+<li class="chart__shapes">Grind Top Barrels</li>
+<li class="chart__grey eight"><span class="chart__label"></span></li>
+<li class="chart__bar" data-skill="rot gstb"><span class="chart__label"></span></li>
+<li class="chart__shapes">Grind Standard Barrel</li>
+<li class="chart__grey eight"><span class="chart__label"></span></li>
+<li class="chart__bar" data-skill="rot sb"><span class="chart__label"></span></li>
+<li class="chart__shapes">Tall Barrels</li>
+<li class="chart__grey eight"><span class="chart__label"></span></li>
+<li class="chart__bar" data-skill="rot tb"><span class="chart__label"></span></li>
+<li class="chart__shapes">Cones</li>
+<li class="chart__grey eight"><span class="chart__label"></span></li>
+<li class="chart__bar" data-skill="rot c"><span class="chart__label"></span></li>
+<li class="chart__shapes">Tall Cones</li>
+<li class="chart__grey eight"><span class="chart__label"></span></li>
+<li class="chart__bar" data-skill="rot tc"><span class="chart__label"></span></li>
+<li class="chart__shapes">Black Widow</li>
+<li class="chart__grey eight"><span class="chart__label"></span></li>
+<li class="chart__bar" data-skill="rot bw"><span class="chart__label"></span></li>
+<li class="chart__shapes">Tall Black Widow</li>
+<li class="chart__grey eight"><span class="chart__label"></span></li>
+<li class="chart__bar" data-skill="rot tbw"><span class="chart__label"></span></li>
+</ul>
+</div>
+</div>
+</div>
+<!--End Bushing Graph-->
+<h2><a href="https://stoked.la/products/khiro-longboard-bushings-barrel-with-washers-1-truck-1-qty" title="Khiro Bushings" target="_blank" rel="noopener noreferrer">Khiro Bushings</a></h2>
+<p>Khiro has officially stopped production and their products will be harder to find as the days go on. Regardless, this is here for reference if you happen to find Khiro.</p>
+<p><img src="//cdn.shopify.com/s/files/1/2175/4361/files/khiro-bushings.jpg?v=1507152929" alt="Khiro Barrel Bushings"></p>
+<!--Bushing Graph--> <!--Graph Stuff-->
+<div class="khirograph">
+<ul class="lines">
+<li class="line l--0"><span class="line__label title"> Durometer: </span></li>
+<li class="line l--one7"><span class="line__label"> 98a </span></li>
+<li class="line l--two7"><span class="line__label"> 95a </span></li>
+<li class="line l--three7"><span class="line__label"> 92a </span></li>
+<li class="line l--four7"><span class="line__label"> 90a </span></li>
+<li class="line l--five7"><span class="line__label"> 85a </span></li>
+<li class="line l--six7"><span class="line__label"> 79a </span></li>
+<li class="line l--seven7"><span class="line__label"> 73a </span></li>
+</ul>
+<div id="charts" class="charts">
+<div class="chart--khiro">
+<span class="chart__title">Khiro</span>
+<ul class="chart--horiz">
+<li class="chart__shapes">Bitch</li>
+<li class="chart__grey seven"><span class="chart__label"></span></li>
+<li class="chart__bar" data-skill="khr bit"><span class="chart__label"></span></li>
+<li class="chart__shapes">Standard</li>
+<li class="chart__grey seven"><span class="chart__label"></span></li>
+<li class="chart__bar" data-skill="khr std"><span class="chart__label"></span></li>
+<li class="chart__shapes">Tall Cone</li>
+<li class="chart__grey seven"><span class="chart__label"></span></li>
+<li class="chart__bar" data-skill="khr tc"><span class="chart__label"></span></li>
+<li class="chart__shapes">Tall Cone Combo</li>
+<li class="chart__grey seven"><span class="chart__label"></span></li>
+<li class="chart__bar" data-skill="khr tcc"><span class="chart__label"></span></li>
+<li class="chart__shapes">Small Cone Combo</li>
+<li class="chart__grey seven"><span class="chart__label"></span></li>
+<li class="chart__bar" data-skill="khr scc"><span class="chart__label"></span></li>
+<li class="chart__shapes">Double Barrel</li>
+<li class="chart__grey seven"><span class="chart__label"></span></li>
+<li class="chart__bar" data-skill="khr db"><span class="chart__label"></span></li>
+<li class="chart__shapes">Low Profile</li>
+<li class="chart__grey seven"><span class="chart__label"></span></li>
+<li class="chart__bar" data-skill="khr lp"><span class="chart__label"></span></li>
+<li class="chart__shapes">Aluminum Insert</li>
+<li class="chart__grey seven"><span class="chart__label"></span></li>
+<li class="chart__bar" data-skill="khr ai"><span class="chart__label"></span></li>
+<li class="chart__shapes">KBAC 1</li>
+<li class="chart__grey seven"><span class="chart__label"></span></li>
+<li class="chart__bar" data-skill="khr k1"><span class="chart__label"></span></li>
+<li class="chart__shapes">KBAC 2</li>
+<li class="chart__grey seven"><span class="chart__label"></span></li>
+<li class="chart__bar" data-skill="khr k2"><span class="chart__label"></span></li>
+</ul>
+</div>
+</div>
+</div>
+<!--End Bushing Graph-->
+<h2>Orangatang Nipples Bushings</h2>
+<p>Otang Nipples are amazing for dancing. They are soft and reboundy. Because of this, it makes it hard to recommend the correct duro.</p>
+<p><img src="//cdn.shopify.com/s/files/1/2175/4361/files/orangatang-nipples-bushings.jpg?v=1507152954" alt="Orangatang Nipple Bushings"></p>
+<p>The selection of these bushings is very preference driven. They also are designed for Paris trucks, they probably wont be a perfect fit on much else but you can make them work. They come with very nice flat washers in a easily destroyed cardboard tube.</p>
+<!--Bushing Graph--> <!--Graph Stuff-->
+<div class="nipgraph">
+<ul class="lines">
+<li class="line l--0"><span class="line__label title"> Durometer: </span></li>
+<li class="line l--one3"><span class="line__label"> 89a </span></li>
+<li class="line l--two3"><span class="line__label"> 85a </span></li>
+<li class="line l--three3"><span class="line__label"> 83a </span></li>
+</ul>
+<div id="charts" class="charts">
+<div class="chart--nip">
+<span class="chart__title">Nipples</span>
+<ul class="chart--horiz">
+<li class="chart__shapes">Barrel</li>
+<li class="chart__grey three"><span class="chart__label"></span></li>
+<li class="chart__bar" data-skill="otg b"><span class="chart__label"></span></li>
+</ul>
+</div>
+</div>
+</div>
+<!--End Bushing Graph-->
+<h2>RAD Bushings</h2>
+<p>RAD bushings have three duros, with only one shape, the classic barrel. Short sweet and to the point. They're about average range for most riders looking to freeride and downhill.</p>
+<p><img src="//cdn.shopify.com/s/files/1/2175/4361/files/rad-bushings.jpg?v=1507152979" alt="Rider Approved Designs (RAD) Bushings"></p>
+<!--Bushing Graph--> <!--Graph Stuff-->
+<div class="radgraph">
+<ul class="lines">
+<li class="line l--0"><span class="line__label title"> Durometer: </span></li>
+<li class="line l--one3"><span class="line__label"> 92a </span></li>
+<li class="line l--two3"><span class="line__label"> 89a </span></li>
+<li class="line l--three3"><span class="line__label"> 86a </span></li>
+</ul>
+<div id="charts" class="charts">
+<div class="chart--rad">
+<span class="chart__title">RAD</span>
+<ul class="chart--horiz">
+<li class="chart__shapes">Barrel</li>
+<li class="chart__grey three"><span class="chart__label"></span></li>
+<li class="chart__bar" data-skill="rad b"><span class="chart__label"></span></li>
+</ul>
+</div>
+</div>
+</div>
+<!--End Bushing Graph-->
+<h2>Blood Orange Bushings</h2>
+<p>Blood Orange is the stock bushing inside of Caliber Trucks. If you like the way they feel and want to stick with them you can easily buy some for your weight.</p>
+<p><img src="//cdn.shopify.com/s/files/1/2175/4361/files/blood-orange-bushings.jpg?v=1507153280" alt="Blood Orange Bushings"></p>
+<p>They also have insert bushings but they don't seem to be available individual for purchase.</p>
+<!--Bushing Graph--> <!--Graph Stuff-->
+<div class="bograph">
+<ul class="lines">
+<li class="line l--0"><span class="line__label title"> Durometer: </span></li>
+<li class="line l--one5"><span class="line__label"> 92a </span></li>
+<li class="line l--two5"><span class="line__label"> 89a </span></li>
+<li class="line l--three5"><span class="line__label"> 86a </span></li>
+<li class="line l--four5"><span class="line__label"> 83a </span></li>
+<li class="line l--five5"><span class="line__label"> 80a </span></li>
+</ul>
+<div id="charts" class="charts">
+<div class="chart--bo">
+<span class="chart__title">Blood Orange</span>
+<ul class="chart--horiz">
+<li class="chart__shapes">Cone / Cone</li>
+<li class="chart__grey five"><span class="chart__label"></span></li>
+<li class="chart__bar" data-skill="bo cc"><span class="chart__label"></span></li>
+<li class="chart__shapes">Barrel / Cone</li>
+<li class="chart__grey five"><span class="chart__label"></span></li>
+<li class="chart__bar" data-skill="bo cb"><span class="chart__label"></span></li>
+<li class="chart__shapes">Barrel / Barrel</li>
+<li class="chart__grey five"><span class="chart__label"></span></li>
+<li class="chart__bar" data-skill="bo bb"><span class="chart__label"></span></li>
+<li class="chart__shapes">Barrel / Chubby</li>
+<li class="chart__grey five"><span class="chart__label"></span></li>
+<li class="chart__bar" data-skill="bo ww"><span class="chart__label"></span></li>
+</ul>
+</div>
+</div>
+</div>
+<!--End Bushing Graph-->
+<h2>Shorty's Doh-Dohs</h2>
+<p><span>Doh Dohs are a favorite among street skaters. They come in a small plastic bag and are generally hard to accommodate their target market. </span></p>
+<p><span><img src="//cdn.shopify.com/s/files/1/2175/4361/files/shortys-doh-doh-bushings.jpg?v=1507153300" alt="Shorty's Doh-Doh Bushings"></span></p>
+<p><span>If you're doing a lot of free style these hard bushings will help you straighten up on impact.</span></p>
+<!--Bushing Graph--> <!--Graph Stuff-->
+<div class="oggraph">
+<ul class="lines">
+<li class="line l--0"><span class="line__label title"> Durometer: </span></li>
+<li class="line l--one8"><span class="line__label"> 100a </span></li>
+<li class="line l--two8"><span class="line__label"> 99a </span></li>
+<li class="line l--three8"><span class="line__label"> 98a </span></li>
+<li class="line l--four8"><span class="line__label"> 96a </span></li>
+<li class="line l--five8"><span class="line__label"> 93a </span></li>
+<li class="line l--six8"><span class="line__label"> 95a </span></li>
+<li class="line l--seven8"><span class="line__label"> 92a </span></li>
+<li class="line l--eight8"><span class="line__label"> 88a </span></li>
+</ul>
+<div id="charts" class="charts">
+<div class="chart--og">
+<span class="chart__title">OG Bushings</span>
+<ul class="chart--horiz">
+<li class="chart__shapes">OG Bushings</li>
+<li class="chart__grey eight"><span class="chart__label"></span></li>
+<li class="chart__bar" data-skill="doh og"><span class="chart__label"></span></li>
+</ul>
+</div>
+</div>
+</div>
+<!--End Bushing Graph-->
+<h2>Bones Hardcore</h2>
+<p><span>Bones hardcore are currently the most popular street skating bushings. As their name suggests they get harder as you near the kingpin creating a "hard core". </span></p>
+<p><span><img src="//cdn.shopify.com/s/files/1/2175/4361/files/bones-hardcore-bushings.jpg?v=1507153328" alt="Bones Hardcore Bushings"></span></p>
+<p><span>The hard core keeps the bushing from being compressed on the the opposite side of turn. It isolates the compression to keep the opposite side from being pushed away from the kingpin.</span></p>
+<!--Bushing Graph--> <!--Graph Stuff-->
+<div class="hcgraph">
+<ul class="lines">
+<li class="line l--0"><span class="line__label title"> Durometer: </span></li>
+<li class="line l--one3r"><span class="line__label"> 96 </span></li>
+<li class="line l--two3r"><span class="line__label"> 91a </span></li>
+<li class="line l--three3r"><span class="line__label"> 81a </span></li>
+</ul>
+<div id="charts" class="charts">
+<div class="chart--hc">
+<span class="chart__title">Hard Core</span>
+<ul class="chart--horiz">
+<li class="chart__shapes">Cone / Cone</li>
+<li class="chart__grey threer"><span class="chart__label"></span></li>
+<li class="chart__bar" data-skill="hdc cc"><span class="chart__label"></span></li>
+<li class="chart__shapes">Cone / Barrel</li>
+<li class="chart__grey threer"><span class="chart__label"></span></li>
+<li class="chart__bar" data-skill="hdc cb"><span class="chart__label"></span></li>
+<li class="chart__shapes">Barrel / Barrel</li>
+<li class="chart__grey threer"><span class="chart__label"></span></li>
+<li class="chart__bar" data-skill="hdc bb"><span class="chart__label"></span></li>
+<li class="chart__shapes">Wide Cone / Barrel</li>
+<li class="chart__grey threer"><span class="chart__label"></span></li>
+<li class="chart__bar" data-skill="hdc wcb"><span class="chart__label"></span></li>
+<li class="chart__shapes">Wide Cone / Wide Cone</li>
+<li class="chart__grey threer"><span class="chart__label"></span></li>
+<li class="chart__bar" data-skill="hdc wcwc"><span class="chart__label"></span></li>
+</ul>
+</div>
+</div>
+</div>
+<h2>Independent Bushings</h2>
+<p>Indys are one of the most popular truck brands for street and of course they come with Indy bushings.</p>
+<p><img src="//cdn.shopify.com/s/files/1/2175/4361/files/independent-bushings.jpg?v=1507153373" alt="Independent Bushings"></p>
+<p>If you want to use OEM parts here's what you need.</p>
+<!--Bushing Graph--> <!--Graph Stuff-->
+<div class="indgraph">
+<ul class="lines">
+<li class="line l--0"><span class="line__label title"> Durometer: </span></li>
+<li class="line l--one5"><span class="line__label"> 94a </span></li>
+<li class="line l--two5"><span class="line__label"> 92a </span></li>
+<li class="line l--three5"><span class="line__label"> 90a </span></li>
+<li class="line l--four5"><span class="line__label"> 88a </span></li>
+<li class="line l--five5"><span class="line__label"> 78a </span></li>
+</ul>
+<div id="charts" class="charts">
+<div class="chart--indy">
+<span class="chart__title">Indys</span>
+<ul class="chart--horiz">
+<li class="chart__shapes">Standard</li>
+<li class="chart__grey five"><span class="chart__label"></span></li>
+<li class="chart__bar" data-skill="ind std"><span class="chart__label"></span></li>
+<li class="chart__shapes">Conical</li>
+<li class="chart__grey five"><span class="chart__label"></span></li>
+<li class="chart__bar" data-skill="ind c"><span class="chart__label"></span></li>
+<li class="chart__shapes">Conical Low</li>
+<li class="chart__grey five"><span class="chart__label"></span></li>
+<li class="chart__bar" data-skill="ind cl"><span class="chart__label"></span></li>
+</ul>
+</div>
+</div>
+</div>
+<h2>Thunder</h2>
+<p>Thunder trucks have my favorite graphics. They look nice and make their own bushings.</p>
+<p><img src="//cdn.shopify.com/s/files/1/2175/4361/files/thunder-bushings.jpg?v=1507153351" alt="Thunder Bushings"></p>
+<p>All of them are above 90a to fit your street needs.</p>
+<!--Bushing Graph--> <!--Graph Stuff-->
+<div class="thngraph">
+<ul class="lines">
+<li class="line l--0"><span class="line__label title"> Durometer: </span></li>
+<li class="line l--one5"><span class="line__label"> 101a </span></li>
+<li class="line l--two5"><span class="line__label"> 100a </span></li>
+<li class="line l--three5"><span class="line__label"> 97a </span></li>
+<li class="line l--four5"><span class="line__label"> 94a </span></li>
+<li class="line l--five5"><span class="line__label"> 90a </span></li>
+</ul>
+<div id="charts" class="charts">
+<div class="chart--thn">
+<span class="chart__title">Thunder</span>
+<ul class="chart--horiz">
+<li class="chart__shapes">Conical</li>
+<li class="chart__grey five"><span class="chart__label"></span></li>
+<li class="chart__bar" data-skill="thn c"><span class="chart__label"></span></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
