@@ -1,0 +1,81 @@
+
+//hardware calculator
+.mySlides{
+  animation:fade 1s;
+  -webkit-animation:fade 1s;
+}
+
+@keyframes fade
+{
+  0%  {opacity: 0}
+  100%{opacity: 1}
+}
+
+.hw{
+  
+  form input{
+    border: 1px solid;
+    max-width: 15%;
+    padding: 8px 10px;
+    //border-radius: $input-radius;
+
+    &[disabled],
+    &.disabled {
+      cursor: default;
+      //background-color: $disabledGrey;
+      //border-color: $disabledBorder;
+    }
+
+    &.input-full {
+      width: 100%;
+    }
+  }
+}
+
+.btn--hw{
+  //@include headerFontStack;
+  display: inline-block;
+  padding: 9px 20px;
+  margin: 0;
+  width: auto;
+  min-width: 90px;
+  line-height: 1.42;
+  font-size: em(16px);
+  text-decoration: none;
+  text-align: center;
+  vertical-align: middle;
+  white-space: normal;
+  cursor: pointer;
+  border: 1px solid transparent;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  //border-radius: $input-radius;
+  //color: $colorBtnPrimaryText;
+  //transition: padding-right 0.3s, background 0.3s;
+  //background: $colorBtnPrimary;
+ 
+
+  //@include media-query($small) {
+  //  font-size: em(14px);
+  //  padding: 8px 18px;
+  //}
+
+
+  &:active {
+  }
+
+  &[disabled],
+  &.disabled {
+    cursor: default;
+    //color: darken($disabledBorder, 27%);
+    //background-color: $disabledGrey;
+  }
+}
+.container-fluid .custom-block-banner a{color:#000}
+.banner-mobile{
+display:none;
+}
