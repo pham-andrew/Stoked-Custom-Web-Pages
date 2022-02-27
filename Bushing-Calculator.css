@@ -1,0 +1,1046 @@
+//BUSHING CALCULATOR
+.weightform{
+  html {
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+  }
+  *, 
+  *:before, 
+  *:after {
+    box-sizing: inherit;
+    z-index: 0;
+  }
+    form {
+    //width: 120%;
+    max-width: 10000px;
+    //margin: 60px auto;
+    padding-left: 15px;
+    float: right;
+  }
+  form input {
+    font-size: 25px;
+    padding: 20px;
+    border: 2px solid #ccc;
+    border-right: 0;
+    //width: 100%;
+    color: #666;
+    font-weight: bold;
+  }
+  form input:focus {
+    outline: 0;
+  }
+  form input.error {
+    border-color: #ff0000;  
+  }
+  form label.error {
+    background-color: #ff0000;
+    color: #fff;
+    padding: 6px;
+    font-size: 11px;
+  }
+
+  label {
+    color: #999;
+    display: block;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 0.05em
+  }
+
+  .flex {
+    display: flex;
+    justify-content: flex-start;
+  }
+  .flex .weight {
+    font-size: 30px;
+    padding: 0 10px 0 10px;
+    color: #999;
+    border: 2px solid #ccc;
+    border-left: 0;
+    line-height: 2.5;
+    background: white;
+    cursor: pointer;
+  }
+
+  .flex input {
+    max-width: 100px;
+    flex: 0 0 200px;
+  }
+}
+
+//Bushing Graphs
+//Setup
+
+@mixin stagger-anim-delay($i, $initial-delay, $stagger-delay) {
+  @while $i > 0 {
+    &:nth-of-type(#{$i}) {
+      animation-delay: $initial-delay + $stagger-delay * $i;
+    }
+    $i: $i - 1;
+  }
+}
+
+body {
+  color: #282828;
+}
+
+//Graphs
+  .graph {
+    width: 100%;
+    max-width: 960px;
+    height: 300px;
+    margin: auto;
+    position: relative;
+    margin-bottom: 2.5em;
+  }
+  .apsgraph {
+    width: 100%;
+    max-width: 960px;
+    height: 600px;
+    margin: auto;
+    position: relative;
+    margin-bottom: 2.5em;
+  }
+  .wfbgraph {
+    width: 100%;
+    max-width: 960px;
+    height: 600px;
+    margin: auto;
+    position: relative;
+    margin-bottom: 2.5em;
+  }
+  .kkgraph {
+    width: 100%;
+    max-width: 960px;
+    height: 600px;
+    margin: auto;
+    position: relative;
+    margin-bottom: 2.5em;
+  }
+  .hpfgraph {
+    width: 100%;
+    max-width: 960px;
+    height: 475px;
+    margin: auto;
+    position: relative;
+    margin-bottom: 2.5em;
+  }
+  .shrgraph {
+    width: 100%;
+    max-width: 960px;
+    height: 425px;
+    margin: auto;
+    position: relative;
+    margin-bottom: 2.5em;
+  }
+  .oustgraph {
+    width: 100%;
+    max-width: 960px;
+    height: 380px;
+    margin: auto;
+    position: relative;
+    margin-bottom: 2.5em;
+  }
+  .riotgraph {
+    width: 100%;
+    max-width: 960px;
+    height: 600px;
+    margin: auto;
+    position: relative;
+    margin-bottom: 2.5em;
+  }
+  .khirograph {
+    width: 100%;
+    max-width: 960px;
+    height: 600px;
+    margin: auto;
+    position: relative;
+    margin-bottom: 2.5em;
+  }
+  .nipgraph {
+    width: 100%;
+    max-width: 960px;
+    height: 100px;
+    margin: auto;
+    position: relative;
+    margin-bottom: 2.5em;
+  }
+  .radgraph {
+    width: 100%;
+    max-width: 960px;
+    height: 100px;
+    margin: auto;
+    position: relative;
+    margin-bottom: 2.5em;
+  }
+  .bograph {
+    width: 100%;
+    max-width: 960px;
+    height: 265px;
+    margin: auto;
+    position: relative;
+    margin-bottom: 2.5em;
+  }
+  .oggraph {
+    width: 100%;
+    max-width: 960px;
+    height: 100px;
+    margin: auto;
+    position: relative;
+    margin-bottom: 2.5em;
+  }
+  .hcgraph {
+    width: 100%;
+    max-width: 960px;
+    height: 320px;
+    margin: auto;
+    position: relative;
+    margin-bottom: 2.5em;
+  }
+  .dagraph {
+    width: 100%;
+    max-width: 960px;
+    height: 100px;
+    margin: auto;
+    position: relative;
+    margin-bottom: 2.5em;
+  }
+  .indgraph {
+    width: 100%;
+    max-width: 960px;
+    height: 210px;
+    margin: auto;
+    position: relative;
+    margin-bottom: 2.5em;
+  }
+  .thngraph {
+    width: 100%;
+    max-width: 960px;
+    height: 100px;
+    margin: auto;
+    position: relative;
+    margin-bottom: 2.5em;
+  }
+
+
+  //Graph Duro Lines
+  .lines {
+    height: 100%;
+    position: relative;
+    list-style: none;
+    z-index: 2;
+
+    .line {
+      height: 100%;
+      width: 2px;
+      position: absolute;
+      background: grey;
+      
+      //for 9 duro options
+      &.l--0 {
+        background: transparent;  
+      }
+      &.l--11 {
+        left: 11.11%;  
+      }
+      &.l--22 {
+        left: 22.22%; 
+      }
+      &.l--33 {
+        left: 33.33%;      
+      }
+      &.l--44 {
+        left: 44.44%;  
+      }
+      &.l--55 {
+        left: 55.55%;
+      }
+      &.l--66 {
+        left: 66.66%;      
+      }
+      &.l--77 {
+        left: 77.77%;    
+      }
+      &.l--88 {
+        left: 88.88%;     
+      }
+      &.l--99 {
+        left: 99.99%;
+      }
+      //for 7 duro options... venom
+      &.l--one7 {
+        left: 14.29%;  
+      }
+      &.l--two7 {
+        left: 28.57%; 
+      }
+      &.l--three7 {
+        left: 42.86%;     
+      }
+      &.l--four7 {
+        left: 57.14%;      
+      }
+      &.l--five7 {
+        left: 71.43%;  
+      }
+      &.l--six7 {
+        left: 85.71%;
+      }
+      &.l--seven7 {
+        left: 99.9%;      
+      }
+      //for 8 duro options... riot
+      &.l--one8 {
+        left: 12.5%;  
+      }
+      &.l--two8 {
+        left: 25%; 
+      }
+      &.l--three8 {
+        left: 37.5%;     
+      }
+      &.l--four8 {
+        left: 50%;      
+      }
+      &.l--five8 {
+        left: 62.5%;  
+      }
+      &.l--six8 {
+        left: 75%;
+      }    
+      &.l--seven8 {
+        left: 87.8%;    
+      }
+      &.l--eight8 {
+        left: 99.9%;    
+      }
+      //for four duro options
+      &.l--one4 {
+        left: 32.5%;    
+      } 
+      &.l--two {
+        left: 55%;    
+      }  
+      &.l--three4 {
+        left: 77.5%;    
+      }
+      &.l--four4 {
+        left: 100%;    
+      }
+      //for six duro options
+      &.l--one6 {
+        left: 25%;    
+      } 
+      &.l--two6 {
+        left: 30%;    
+      } 
+      &.l--three6 {
+        left: 45%;    
+      } 
+      &.l--four6 {
+        left: 70%;    
+      } 
+      &.l--five6 {
+        left: 85%;    
+      } 
+      &.l--six6 {
+        left: 100%;    
+      } 
+      //for five duro options
+      &.l--one5 {
+        left: 20%;    
+      } 
+      &.l--two5 {
+        left: 40%;    
+      } 
+      &.l--three5 {
+        left: 60%;    
+      } 
+      &.l--four5 {
+        left: 80%;    
+      } 
+      &.l--five5 {
+        left: 99.9%;    
+      } 
+      //for three duro options
+      &.l--one3 {
+        left: 10%;    
+      } 
+      &.l--two3 {
+        left: 55%;    
+      } 
+      &.l--three3 {
+        left: 99.9%;    
+      } 
+      //for three duro options shifted right
+      &.l--one3r {
+        left: 20%;    
+      } 
+      &.l--two3r {
+        left: 60%;    
+      } 
+      &.l--three3r {
+        left: 99.9%;    
+      } 
+      
+      .line__label {
+        display: block;
+        width: 100px;
+        text-align: center;
+
+        position: absolute;
+        bottom: -30px;
+        right: -50px;
+
+        &.title {
+          text-transform: uppercase;
+          font-weight: bold;
+          display: none;
+        }
+      }
+    }
+  }
+
+  .charts {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+  .chart {
+    margin: 30px 0 0;
+    &:first-child {
+      margin: 0;
+    }
+  }
+  .chart__title {
+    display: block;
+    margin: 0 0 10px;
+    font-weight: bold;
+    opacity: 0;
+    animation: 0.0s anim-lightspeed-in ease forwards;
+    //animation-delay: 0.5s;
+  }
+  .chart--horiz {
+    overflow: hidden;
+  }
+  .chart__label {
+    padding-left: 10px;
+    line-height: 40px;
+    color: white;
+  }
+  .chart__bar{
+    height: 40px;
+    margin-bottom: 15px;
+    margin-top: -55px;
+    list-style: none;
+    background: #1872ac;
+    opacity: 0; 
+    animation: 0.5s anim-lightspeed-in ease forwards;
+    animation-delay: 0.5s;
+    @include stagger-anim-delay(1,1.5,2);
+  }
+  .chart__shapes{
+    margin-bottom: .9em;
+    margin-top: 1.5%;
+    margin-left: -25px;
+    position: absolute;
+    list-style: none;
+    color: #66656e;
+    font-size: 70%;
+    word-wrap: break-word;
+    max-width: 15%;
+  }
+
+  .chart__grey{
+    margin-bottom: 15px;
+    //background: grey;
+    position: relative;
+    list-style: none;
+
+    &.grey {
+      background: transparent;  
+    }
+    &.nine {
+      margin-left: 11%;
+      width: 100%;
+    }
+    &.eight {
+      margin-left: 12.5%;
+      width: 100%;
+    }
+    &.seven {
+      margin-left: 14.2857142857143%;
+      width: 100%;
+    }
+    &.six {
+      margin-left: 25%;
+      width: 100%;
+    }
+    &.five {
+      margin-left: 20%;
+      width: 100%;
+    }
+    &.three {
+      margin-left: 10%;
+      width: 100%;
+    }
+    &.threer {
+      margin-left: 20%;
+      width: 100%;
+    }
+  }
+.theme-200plus .chart__bar {
+    &[data-skill='rt aps st'] { width: 11.1111111111111%; margin-left: 11.1111111111111%;}
+    &[data-skill='rt aps c c'] { width: 11.1111111111111%; margin-left: 11.1111111111111%; }
+    &[data-skill='rt aps c b'] { width: 11.1111111111111%; margin-left: 11.1111111111111%; }
+    &[data-skill='rt aps b b'] { width: 11.1111111111111%; margin-left: 11.1111111111111%; }
+    &[data-skill='rt aps tc c'] { width: 11.1111111111111%; margin-left: 11.1111111111111%; }
+    &[data-skill='rt aps tb c'] { width: 11.1111111111111%; margin-left: 11.1111111111111%; }
+    &[data-skill='rt aps tc b'] { width: 11.1111111111111%; margin-left: 11.1111111111111%; }
+    &[data-skill='rt aps tb b'] { width: 11.1111111111111%; margin-left: 11.1111111111111%; }
+    &[data-skill='rt aps fc b'] { width: 22.2222222222222%; margin-left: 11.1111111111111%; }
+    &[data-skill='rt aps ch b'] { width: 22.2222222222222%; margin-left: 11.1111111111111%; }
+
+    &[data-skill='rt wfb st'] { width: 14.2857142857143%; margin-left: 14.2857142857143%; }
+    &[data-skill='rt wfb c c'] { width: 14.2857142857143%; margin-left: 14.2857142857143%; }
+    &[data-skill='rt wfb c b'] { width: 14.2857142857143%; margin-left: 14.2857142857143%; }
+    &[data-skill='rt wfb b b'] { width: 28.5714285714286%; margin-left: 14.2857142857143%; }
+    &[data-skill='rt wfb tc c'] { width: 14.2857142857143%; margin-left: 14.2857142857143%; }
+    &[data-skill='rt wfb tb c'] { width: 14.2857142857143%; margin-left: 14.2857142857143%; }
+    &[data-skill='rt wfb tc b'] { width: 14.2857142857143%; margin-left: 14.2857142857143%; }
+    &[data-skill='rt wfb tb b'] { width: 14.2857142857143%; margin-left: 14.2857142857143%; }
+    &[data-skill='rt wfb fc b'] { width: 28.5714285714286%; margin-left: 14.2857142857143%; }
+    &[data-skill='rt wfb ch b'] { width: 28.5714285714286%; margin-left: 14.2857142857143%; }
+
+    &[data-skill='rt krk st'] { width: 20%; margin-left: 20%; }
+    &[data-skill='rt krk c c'] { width: 20%; margin-left: 20%; }
+    &[data-skill='rt krk c b'] { width: 20%; margin-left: 20%; }
+    &[data-skill='rt krk b b'] { width: 20%; margin-left: 20%; }
+    &[data-skill='rt krk tc c'] { width: 20%; margin-left: 20%; }
+    &[data-skill='rt krk tb c'] { width: 20%; margin-left: 20%; }
+    &[data-skill='rt krk tc b'] { width: 20%; margin-left: 20%; }
+    &[data-skill='rt krk tb b'] { width: 20%; margin-left: 20%; }
+    &[data-skill='rt krk fc b'] { width: 20%; margin-left: 20%; }
+    &[data-skill='rt krk ch b'] { width: 20%; margin-left: 20%; }
+
+    &[data-skill='hpf str'] { width: 12.5%; margin-left: 12.5%; }
+    &[data-skill='hpf scv'] { width: 12.5%; margin-left: 12.5%; }
+    &[data-skill='hpf std'] { width: 12.5%; margin-left: 12.5%; }
+    &[data-skill='hpf dh'] { width: 12.5%; margin-left: 12.5%; }
+    &[data-skill='hpf fr'] { width: 12.5%; margin-left: 12.5%; }
+    &[data-skill='hpf elm'] { width: 12.5%; margin-left: 12.5%; }
+    &[data-skill='hpf keg'] { width: 12.5%; margin-left: 12.5%; }
+    &[data-skill='hpf tbr'] { width: 12.5%; margin-left: 12.5%; }
+
+    &[data-skill='shr str'] { width: 14.2857142857143%; margin-left: 14.2857142857143%; }
+    &[data-skill='shr scv'] { width: 14.2857142857143%; margin-left: 14.2857142857143%; }
+    &[data-skill='shr std'] { width: 14.2857142857143%; margin-left: 14.2857142857143%; }
+    &[data-skill='shr dh'] { width: 14.2857142857143%; margin-left: 14.2857142857143%; }
+    &[data-skill='shr fr'] { width: 14.2857142857143%; margin-left: 14.2857142857143%; }
+    &[data-skill='shr elm'] { width: 14.2857142857143%; margin-left: 14.2857142857143%; }
+    &[data-skill='shr tbr'] { width: 14.2857142857143%; margin-left: 14.2857142857143%; }
+
+    &[data-skill='ost ss'] { width: 20%; margin-left: 20%; }
+    &[data-skill='ost sl'] { width: 20%; margin-left: 20%; }
+    &[data-skill='ost sb'] { width: 20%; margin-left: 20%; }
+    &[data-skill='ost ll'] { width: 20%; margin-left: 20%; }
+    &[data-skill='ost bb'] { width: 40%; margin-left: 20%; }
+    &[data-skill='ost bl'] { width: 20%; margin-left: 20%; }
+
+    &[data-skill='rot gsb'] { width: 25%; margin-left: 12.5%; }
+    &[data-skill='rot gstc'] { width: 25%; margin-left: 12.5%; }
+    &[data-skill='rot gsc'] { width: 25%; margin-left: 12.5%; }
+    &[data-skill='rot gstb'] { width: 25%; margin-left: 12.5%; }
+    &[data-skill='rot sb'] { width: 12.5%; margin-left: 12.5%; }
+    &[data-skill='rot tb'] { width: 12.5%; margin-left: 12.5%; }
+    &[data-skill='rot c'] { width: 12.5%; margin-left: 12.5%; }
+    &[data-skill='rot tc'] { width: 12.5%; margin-left: 12.5%; }
+    &[data-skill='rot bw'] { width: 12.5%; margin-left: 12.5%; }
+    &[data-skill='rot tbw'] { width: 25%; margin-left: 12.5%; }
+
+    &[data-skill='khr bit'] { width: 14.2857142857143%; margin-left: 14.2857142857143%; }
+    &[data-skill='khr std'] { width: 14.2857142857143%; margin-left: 14.2857142857143%; }
+    &[data-skill='khr tc'] { width: 14.2857142857143%; margin-left: 14.2857142857143%; }
+    &[data-skill='khr tcc'] { width: 14.2857142857143%; margin-left: 14.2857142857143%; }
+    &[data-skill='khr scc'] { width: 14.2857142857143%; margin-left: 14.2857142857143%; }
+    &[data-skill='khr db'] { width: 14.2857142857143%; margin-left: 14.2857142857143%; }
+    &[data-skill='khr lp'] { width: 14.2857142857143%; margin-left: 14.2857142857143%; }
+    &[data-skill='khr ai'] { width: 28.5714285714286%; margin-left: 14.2857142857143%; }
+    &[data-skill='khr k1'] { width: 28.5714285714286%; margin-left: 14.2857142857143%; }
+    &[data-skill='khr k2'] { width: 28.5714285714286%; margin-left: 14.2857142857143%; }
+
+    &[data-skill='otg b'] { width: 45%; margin-left: 10%; }
+
+    &[data-skill='rad b'] { width: 45%; margin-left: 10%; }
+
+    &[data-skill='bo cc'] { width: 20%; margin-left: 20%; }
+    &[data-skill='bo cb'] { width: 20%; margin-left: 20%; }
+    &[data-skill='bo bb'] { width: 20%; margin-left: 20%; }
+    &[data-skill='bo ww'] { width: 20%; margin-left: 20%; }
+
+    &[data-skill='doh og'] { width: 25%; margin-left: 12.5%; }
+
+    &[data-skill='mnl ml'] { width: 33.33333%; margin-left: 33.3333%; }
+
+    &[data-skill='hdc cc'] { width: 40%; margin-left: 20%; }
+    &[data-skill='hdc cb'] { width: 40%; margin-left: 20%; }
+    &[data-skill='hdc bb'] { width: 40%; margin-left: 20%; }
+    &[data-skill='hdc wcb'] { width: 40%; margin-left: 20%; }
+    &[data-skill='hdc wcwc'] { width: 40%; margin-left: 20%; }
+
+    &[data-skill='ind std'] { width: 20%; margin-left: 20%; }
+    &[data-skill='ind c'] { width: 20%; margin-left: 20%; }
+    &[data-skill='ind cl'] { width: 20%; margin-left: 20%; }
+
+    &[data-skill='thn c'] { width: 20%; margin-left: 20%; }
+  }
+
+  .theme-200-170 .chart__bar {
+
+    &[data-skill='rt aps st'] { width: 11.1111111111111%; margin-left: 11.1111111111111%; }
+    &[data-skill='rt aps c c'] { width: 11.1111111111111%; margin-left: 11.1111111111111%; }
+    &[data-skill='rt aps c b'] { width: 11.1111111111111%; margin-left: 11.1111111111111%; }
+    &[data-skill='rt aps b b'] { width: 22.2222222222222%; margin-left: 11.1111111111111%; }
+    &[data-skill='rt aps tc c'] { width: 11.1111111111111%; margin-left: 11.1111111111111%; }
+    &[data-skill='rt aps tb c'] { width: 11.1111111111111%; margin-left: 11.1111111111111%; }
+    &[data-skill='rt aps tc b'] { width: 11.1111111111111%; margin-left: 11.1111111111111%; }
+    &[data-skill='rt aps tb b'] { width: 11.1111111111111%; margin-left: 11.1111111111111%; }
+    &[data-skill='rt aps fc b'] { width: 22.2222222222222%; margin-left: 11.1111111111111%; }
+    &[data-skill='rt aps ch b'] { width: 33.3333333333333%; margin-left: 11.1111111111111%; }
+
+    &[data-skill='rt wfb st'] { width: 14.2857142857143%; margin-left: 14.2857142857143%; }
+    &[data-skill='rt wfb c c'] { width: 14.2857142857143%; margin-left: 14.2857142857143%; }
+    &[data-skill='rt wfb c b'] { width: 14.2857142857143%; margin-left: 14.2857142857143%; }
+    &[data-skill='rt wfb b b'] { width: 28.5714285714286%; margin-left: 14.2857142857143%; }
+    &[data-skill='rt wfb tc c'] { width: 14.2857142857143%; margin-left: 14.2857142857143%; }
+    &[data-skill='rt wfb tb c'] { width: 14.2857142857143%; margin-left: 14.2857142857143%; }
+    &[data-skill='rt wfb tc b'] { width: 14.2857142857143%; margin-left: 14.2857142857143%; }
+    &[data-skill='rt wfb tb b'] { width: 14.2857142857143%; margin-left: 14.2857142857143%; }
+    &[data-skill='rt wfb fc b'] { width: 28.5714285714286%; margin-left: 14.2857142857143%; }
+    &[data-skill='rt wfb ch b'] { width: 42.8571428571429%; margin-left: 14.2857142857143%; }
+
+    &[data-skill='rt krk st'] { width: 20%; margin-left: 20%; }
+    &[data-skill='rt krk c c'] { width: 20%; margin-left: 20%; }
+    &[data-skill='rt krk c b'] { width: 40%; margin-left: 20%; }
+    &[data-skill='rt krk b b'] { width: 40%; margin-left: 20%; }
+    &[data-skill='rt krk tc c'] { width: 20%; margin-left: 20%; }
+    &[data-skill='rt krk tb c'] { width: 40%; margin-left: 20%; }
+    &[data-skill='rt krk tc b'] { width: 40%; margin-left: 20%; }
+    &[data-skill='rt krk tb b'] { width: 40%; margin-left: 20%; }
+    &[data-skill='rt krk fc b'] { width: 60%; margin-left: 20%; }
+    &[data-skill='rt krk ch b'] { width: 60%; margin-left: 20%; }
+
+    &[data-skill='hpf str'] { width: 12.5%; margin-left: 37.5%; }
+    &[data-skill='hpf scv'] { width: 12.5%; margin-left: 37.5%; }
+    &[data-skill='hpf std'] { width: 12.5%; margin-left: 37.5%; }
+    &[data-skill='hpf dh'] { width: 12.5%; margin-left: 37.5%; }
+    &[data-skill='hpf fr'] { width: 25%; margin-left: 37.5%; }
+    &[data-skill='hpf elm'] { width: 25%; margin-left: 37.5%; }
+    &[data-skill='hpf keg'] { width: 25%; margin-left: 25%; }
+    &[data-skill='hpf tbr'] { width: 25%; margin-left: 25%; }
+
+    &[data-skill='shr str'] { width: 14.2857142857143%; margin-left: 28.5714285714286%; }
+    &[data-skill='shr scv'] { width: 14.2857142857143%; margin-left: 28.5714285714286%; }
+    &[data-skill='shr std'] { width: 14.2857142857143%; margin-left: 28.5714285714286%; }
+    &[data-skill='shr dh'] { width: 14.2857142857143%; margin-left: 28.5714285714286%; }
+    &[data-skill='shr fr'] { width: 14.2857142857143%; margin-left: 28.5714285714286%; }
+    &[data-skill='shr elm'] { width: 14.2857142857143%; margin-left: 28.5714285714286%; }
+    &[data-skill='shr tbr'] { margin-left: 14.2857142857143%; width: 28.5714285714286%; }
+
+    &[data-skill='ost ss'] { width: 20%; margin-left: 20%; }
+    &[data-skill='ost sl'] { width: 20%; margin-left: 20%; }
+    &[data-skill='ost sb'] { width: 20%; margin-left: 20%; }
+    &[data-skill='ost ll'] { width: 20%; margin-left: 20%; }
+    &[data-skill='ost bb'] { width: 40%; margin-left: 20%; }
+    &[data-skill='ost bl'] { width: 20%; margin-left: 20%; }
+
+    &[data-skill='rot gsb'] { width: 25%; margin-left: 25%; }
+    &[data-skill='rot gstc'] { width: 25%; margin-left: 25%; }
+    &[data-skill='rot gsc'] { width: 25%; margin-left: 25%; }
+    &[data-skill='rot gstb'] { width: 25%; margin-left: 25%; }
+    &[data-skill='rot sb'] { width: 12.5%; margin-left: 37.5%; }
+    &[data-skill='rot tb'] { width: 12.5%; margin-left: 25%; }
+    &[data-skill='rot c'] { width: 12.5%; margin-left: 37.5%; }
+    &[data-skill='rot tc'] { width: 12.5%; margin-left: 25%; }
+    &[data-skill='rot bw'] { width: 12.5%; margin-left: 25%; }
+    &[data-skill='rot tbw'] { width: 25%; margin-left: 25%; }
+
+    &[data-skill='khr bit'] { width: 28.5714285714286%; margin-left: 14.2857142857143%; }
+    &[data-skill='khr std'] { width: 28.5714285714286%; margin-left: 14.2857142857143%; }
+    &[data-skill='khr tc'] { width: 28.5714285714286%; margin-left: 14.2857142857143%; }
+    &[data-skill='khr tcc'] { width: 28.5714285714286%; margin-left: 14.2857142857143%; }
+    &[data-skill='khr scc'] { width: 28.5714285714286%; margin-left: 14.2857142857143%; }
+    &[data-skill='khr db'] { width: 28.5714285714286%; margin-left: 14.2857142857143%; }
+    &[data-skill='khr lp'] { width: 28.5714285714286%; margin-left: 14.2857142857143%; }
+    &[data-skill='khr ai'] { width: 14.2857142857143%; margin-left: 28.5714285714286%; }
+    &[data-skill='khr k1'] { width: 14.2857142857143%; margin-left: 28.5714285714286%; }
+    &[data-skill='khr k2'] { width: 14.2857142857143%; margin-left: 28.5714285714286%; }
+
+    &[data-skill='otg b'] { width: 45%; margin-left: 10%; }
+
+    &[data-skill='rad b'] { width: 45%; margin-left: 10%; }
+
+    &[data-skill='bo cc'] { width: 40%; margin-left: 20%; }
+    &[data-skill='bo cb'] { width: 40%; margin-left: 20%; }
+    &[data-skill='bo bb'] { width: 40%; margin-left: 20%; }
+    &[data-skill='bo ww'] { width: 40%; margin-left: 20%; }
+
+    &[data-skill='doh og'] { width: 25%; margin-left: 37.5%; }
+
+    &[data-skill='mnl ml'] { width: 33.3333333333333%; margin-left: 33.3333333333333%; }
+
+    &[data-skill='hdc cc'] { width: 40%; margin-left: 20%; }
+    &[data-skill='hdc cb'] { width: 40%; margin-left: 20%; }
+    &[data-skill='hdc bb'] { width: 40%; margin-left: 20%; }
+    &[data-skill='hdc wcb'] { width: 40%; margin-left: 20%; }
+    &[data-skill='hdc wcwc'] { width: 40%; margin-left: 20%; }
+
+    &[data-skill='ind std'] { width: 40%; margin-left: 20%; }
+    &[data-skill='ind c'] { width: 40%; margin-left: 20%; }
+    &[data-skill='ind cl'] { width: 40%; margin-left: 20%; }
+
+    &[data-skill='thn c'] { width: 40%; margin-left: 20%; }
+  }
+
+  .theme-170-140 .chart__bar {
+    &[data-skill='rt aps st'] { width: 11.1111111111111%; margin-left: 11.1111111111111%; }
+    &[data-skill='rt aps c c'] { width: 11.1111111111111%; margin-left: 11.1111111111111%; }
+    &[data-skill='rt aps c b'] { width: 22.2222222222222%; margin-left: 11.1111111111111%; }
+    &[data-skill='rt aps b b'] { width: 33.3333333333333%; margin-left: 11.1111111111111%; }
+    &[data-skill='rt aps tc c'] { width: 22.2222222222222%; margin-left: 11.1111111111111%; }
+    &[data-skill='rt aps tb c'] { width: 22.2222222222222%; margin-left: 11.1111111111111%; }
+    &[data-skill='rt aps tc b'] { width: 22.2222222222222%; margin-left: 11.1111111111111%; }
+    &[data-skill='rt aps tb b'] { width: 22.2222222222222%; margin-left: 11.1111111111111%; }
+    &[data-skill='rt aps fc b'] { width: 33.3333333333333%; margin-left: 11.1111111111111%; }
+    &[data-skill='rt aps ch b'] { width: 44.4444444444445%; margin-left: 22.2222222222222%; }
+
+    &[data-skill='rt wfb st'] { width: 14.2857142857143%; margin-left: 14.2857142857143%; }
+    &[data-skill='rt wfb c c'] { width: 14.2857142857143%; margin-left: 14.2857142857143%; }
+    &[data-skill='rt wfb c b'] { width: 28.5714285714286%; margin-left: 14.2857142857143%; }
+    &[data-skill='rt wfb b b'] { width: 28.5714285714286%; margin-left: 14.2857142857143%; }
+    &[data-skill='rt wfb tc c'] { width: 28.5714285714286%; margin-left: 14.2857142857143%; }
+    &[data-skill='rt wfb tb c'] { width: 28.5714285714286%; margin-left: 14.2857142857143%; }
+    &[data-skill='rt wfb tc b'] { width: 28.5714285714286%; margin-left: 14.2857142857143%; }
+    &[data-skill='rt wfb tb b'] { width: 28.5714285714286%; margin-left: 14.2857142857143%; }
+    &[data-skill='rt wfb fc b'] { width: 42.8571428571429%; margin-left: 28.5714285714286%; }
+    &[data-skill='rt wfb ch b'] { width: 42.8571428571429%; margin-left: 28.5714285714286%; }
+
+    &[data-skill='rt krk st'] { width: 40%; margin-left: 20%; }
+    &[data-skill='rt krk c c'] { width: 40%; margin-left: 20%; }
+    &[data-skill='rt krk c b'] { width: 40%; margin-left: 40%; }
+    &[data-skill='rt krk b b'] { width: 60%; margin-left: 40%; }
+    &[data-skill='rt krk tc c'] { width: 40%; margin-left: 20%; }
+    &[data-skill='rt krk tb c'] { width: 40%; margin-left: 40%; }
+    &[data-skill='rt krk tc b'] { width: 40%; margin-left: 40%; }
+    &[data-skill='rt krk tb b'] { width: 40%; margin-left: 60%; }
+    &[data-skill='rt krk fc b'] { width: 60%; margin-left: 60%; }
+    &[data-skill='rt krk ch b'] { width: 60%; margin-left: 60%; }
+
+    &[data-skill='hpf str'] { width: 12.5%; margin-left: 37.5%; }
+    &[data-skill='hpf scv'] { width: 12.5%; margin-left: 37.5%; }
+    &[data-skill='hpf std'] { width: 12.5%; margin-left: 37.5%; }
+    &[data-skill='hpf dh'] { width: 12.5%; margin-left: 37.5%; }
+    &[data-skill='hpf fr'] { width: 25%; margin-left: 37.5%; }
+    &[data-skill='hpf elm'] { width: 25%; margin-left: 37.5%; }
+    &[data-skill='hpf keg'] { width: 25%; margin-left: 25%; }
+    &[data-skill='hpf tbr'] { width: 25%; margin-left: 25%; }
+
+    &[data-skill='shr str'] { width: 14.2857142857143%; margin-left: 42.8571428571429%; }
+    &[data-skill='shr scv'] { width: 14.2857142857143%; margin-left: 42.8571428571429%; }
+    &[data-skill='shr std'] { width: 14.2857142857143%; margin-left: 42.8571428571429%; }
+    &[data-skill='shr dh'] { width: 14.2857142857143%; margin-left: 42.8571428571429%; }
+    &[data-skill='shr fr'] { width: 28.5714285714286%; margin-left: 42.8571428571429%; }
+    &[data-skill='shr elm'] { width: 28.5714285714286%; margin-left: 42.8571428571429%; }
+    &[data-skill='shr tbr'] { width: 28.5714285714286%; margin-left: 28.5714285714286%; }
+
+    &[data-skill='ost ss'] { width: 20%; margin-left: 40%; }
+    &[data-skill='ost sl'] { width: 20%; margin-left: 40%; }
+    &[data-skill='ost sb'] { width: 20%; margin-left: 40%; }
+    &[data-skill='ost ll'] { width: 20%; margin-left: 40%; }
+    &[data-skill='ost bb'] { width: 40%; margin-left: 40%; }
+    &[data-skill='ost bl'] { width: 20%; margin-left: 40%; }
+
+    &[data-skill='rot gsb'] { width: 37.5%; margin-left: 37.5%; }
+    &[data-skill='rot gstc'] { width: 37.5%; margin-left: 37.5%; }
+    &[data-skill='rot gsc'] { width: 37.5%; margin-left: 37.5%; }
+    &[data-skill='rot gstb'] { width: 37.5%; margin-left: 37.5%; }
+    &[data-skill='rot sb'] { width: 37.5%; margin-left: 37.5%; }
+    &[data-skill='rot tb'] { width: 25%; margin-left: 50%; }
+    &[data-skill='rot c'] { width: 12.5%; margin-left: 62.5%; }
+    &[data-skill='rot tc'] { width: 25%; margin-left: 50%; }
+    &[data-skill='rot bw'] { width: 25%; margin-left: 50%; }
+    &[data-skill='rot tbw'] { width: 25%; margin-left: 50%; }
+
+    &[data-skill='khr bit'] { width: 14.2857142857143%; margin-left: 57.1428571428571%; }
+    &[data-skill='khr std'] { width: 14.2857142857143%; margin-left: 57.1428571428571%; }
+    &[data-skill='khr tc'] { width: 14.2857142857143%; margin-left: 57.1428571428571%; }
+    &[data-skill='khr tcc'] { width: 14.2857142857143%; margin-left: 57.1428571428571%; }
+    &[data-skill='khr scc'] { width: 14.2857142857143%; margin-left: 57.1428571428571%; }
+    &[data-skill='khr db'] { width: 14.2857142857143%; margin-left: 57.1428571428571%; }
+    &[data-skill='khr lp'] { width: 14.2857142857143%; margin-left: 57.1428571428571%; }
+    &[data-skill='khr ai'] { width: 28.5714285714286%; margin-left: 57.1428571428571%; }
+    &[data-skill='khr k1'] { width: 28.5714285714286%; margin-left: 57.1428571428571%; }
+    &[data-skill='khr k2'] { width: 28.5714285714286%; margin-left: 57.1428571428571%; }
+
+    &[data-skill='otg b'] { width: 45%; margin-left: 10%; }
+
+    &[data-skill='rad b'] { width: 45%; margin-left: 10%; }
+
+    &[data-skill='bo cc'] { width: 20%; margin-left: 40%; }
+    &[data-skill='bo cb'] { width: 20%; margin-left: 40%; }
+    &[data-skill='bo bb'] { width: 40%; margin-left: 40%; }
+    &[data-skill='bo ww'] { width: 20%; margin-left: 40%; }
+
+    &[data-skill='doh og'] { width: 50%; margin-left: 37.5%; }
+
+    &[data-skill='mnl ml'] { width: 33.3333333333333%; margin-left: 33.3333333333333%; }
+
+    &[data-skill='hdc cc'] { width: 40%; margin-left: 20%; }
+    &[data-skill='hdc cb'] { width: 40%; margin-left: 20%; }
+    &[data-skill='hdc bb'] { width: 40%; margin-left: 20%; }
+    &[data-skill='hdc wcb'] { width: 40%; margin-left: 20%; }
+    &[data-skill='hdc wcwc'] { width: 40%; margin-left: 20%; }
+
+    &[data-skill='ind std'] { width: 20%; margin-left: 60%; }
+    &[data-skill='ind c'] { width: 20%; margin-left: 60%; }
+    &[data-skill='ind cl'] { width: 20%; margin-left: 60%; }
+
+    &[data-skill='thn c'] { width: 20%; margin-left: 60%; }
+  }
+
+  .theme-140-100 .chart__bar {
+    &[data-skill='rt aps st'] { width: 11.1111111111111%; margin-left: 22.2222222222222%; }
+    &[data-skill='rt aps c c'] { width: 22.2222222222222%; margin-left: 22.2222222222222%; }
+    &[data-skill='rt aps c b'] { width: 33.3333333333333%; margin-left: 22.2222222222222%; }
+    &[data-skill='rt aps b b'] { width: 33.3333333333333%; margin-left: 22.2222222222222%; }
+    &[data-skill='rt aps tc c'] { width: 22.2222222222222%; margin-left: 22.2222222222222%; }
+    &[data-skill='rt aps tb c'] { width: 22.2222222222222%; margin-left: 22.2222222222222%; }
+    &[data-skill='rt aps tc b'] { width: 22.2222222222222%; margin-left: 22.2222222222222%; }
+    &[data-skill='rt aps tb b'] { width: 22.2222222222222%; margin-left: 22.2222222222222%; }
+    &[data-skill='rt aps fc b'] { width: 44.4444444444445%; margin-left: 22.2222222222222%; }
+    &[data-skill='rt aps ch b'] { width: 33.3333333333333%; margin-left: 33.3333333333333%; }
+
+    &[data-skill='rt wfb st'] { width: 14.2857142857143%; margin-left: 28.5714285714286%; }
+    &[data-skill='rt wfb c c'] { width: 14.2857142857143%; margin-left: 28.5714285714286%; }
+    &[data-skill='rt wfb c b'] { width: 28.5714285714286%; margin-left: 28.5714285714286%; }
+    &[data-skill='rt wfb b b'] { width: 28.5714285714286%; margin-left: 28.5714285714286%; }
+    &[data-skill='rt wfb tc c'] { width: 14.2857142857143%; margin-left: 28.5714285714286%; }
+    &[data-skill='rt wfb tb c'] { width: 14.2857142857143%; margin-left: 28.5714285714286%; }
+    &[data-skill='rt wfb tc b'] { width: 14.2857142857143%; margin-left: 28.5714285714286%; }
+    &[data-skill='rt wfb tb b'] { width: 14.2857142857143%; margin-left: 28.5714285714286%; }
+    &[data-skill='rt wfb fc b'] { width: 42.8571428571429%; margin-left: 28.5714285714286%; }
+    &[data-skill='rt wfb ch b'] { width: 57.1428571428572%; margin-left: 42.8571428571429%; }
+
+    &[data-skill='rt krk st'] { width: 40%; margin-left: 40%; }
+    &[data-skill='rt krk c c'] { width: 40%; margin-left: 40%; }
+    &[data-skill='rt krk c b'] { width: 40%; margin-left: 60%; }
+    &[data-skill='rt krk b b'] { width: 60%; margin-left: 60%; }
+    &[data-skill='rt krk tc c'] { width: 40%; margin-left: 40%; }
+    &[data-skill='rt krk tb c'] { width: 40%; margin-left: 60%; }
+    &[data-skill='rt krk tc b'] { width: 40%; margin-left: 60%; }
+    &[data-skill='rt krk tb b'] { width: 20%; margin-left: 80%; }
+    &[data-skill='rt krk fc b'] { width: 40%; margin-left: 80%; }
+    &[data-skill='rt krk ch b'] { width: 40%; margin-left: 80%; }
+
+    &[data-skill='hpf str'] { width: 12.5%; margin-left: 50%; }
+    &[data-skill='hpf scv'] { width: 25%; margin-left: 50%; }
+    &[data-skill='hpf std'] { width: 25%; margin-left: 50%; }
+    &[data-skill='hpf dh'] { width: 25%; margin-left: 50%; }
+    &[data-skill='hpf fr'] { width: 25%; margin-left: 50%; }
+    &[data-skill='hpf elm'] { width: 25%; margin-left: 50%; }
+    &[data-skill='hpf keg'] { width: 37.5%; margin-left: 37.5%; }
+    &[data-skill='hpf tbr'] { width: 37.5%; margin-left: 37.5%; }
+
+    &[data-skill='shr str'] { width: 14.2857142857143%; margin-left: 57.1428571428571%; }
+    &[data-skill='shr scv'] { width: 28.5714285714286%; margin-left: 57.1428571428571%; }
+    &[data-skill='shr std'] { width: 28.5714285714286%; margin-left: 57.1428571428571%; }
+    &[data-skill='shr dh'] { width: 28.5714285714286%; margin-left: 57.1428571428571%; }
+    &[data-skill='shr fr'] { width: 14.2857142857143%; margin-left: 71.4285714285714%; }
+    &[data-skill='shr elm'] { width: 14.2857142857143%; margin-left: 71.4285714285714%; }
+    &[data-skill='shr tbr'] { width: 28.5714285714286%; margin-left: 57.1428571428571%; }
+
+    &[data-skill='ost ss'] { width: 20%; margin-left: 60%; }
+    &[data-skill='ost sl'] { width: 20%; margin-left: 60%; }
+    &[data-skill='ost sb'] { width: 20%; margin-left: 60%; }
+    &[data-skill='ost ll'] { width: 20%; margin-left: 60%; }
+    &[data-skill='ost bb'] { width: 40%; margin-left: 60%; }
+    &[data-skill='ost bl'] { width: 20%; margin-left: 60%; }
+
+    &[data-skill='rot gsb'] { width: 25%; margin-left: 50%; }
+    &[data-skill='rot gstc'] { width: 25%; margin-left: 50%; }
+    &[data-skill='rot gsc'] { width: 25%; margin-left: 50%; }
+    &[data-skill='rot gstb'] { width: 25%; margin-left: 50%; }
+    &[data-skill='rot sb'] { width: 25%; margin-left: 50%; }
+    &[data-skill='rot tb'] { width: 25%; margin-left: 50%; }
+    &[data-skill='rot c'] { width: 12.5%; margin-left: 62.5%; }
+    &[data-skill='rot tc'] { width: 25%; margin-left: 50%; }
+    &[data-skill='rot bw'] { width: 25%; margin-left: 50%; }
+    &[data-skill='rot tbw'] { width: 25%; margin-left: 50%; }
+
+    &[data-skill='khr bit'] { width: 14.2857142857143%; margin-left: 71.4285714285714%; }
+    &[data-skill='khr std'] { width: 14.2857142857143%; margin-left: 71.4285714285714%; }
+    &[data-skill='khr tc'] { width: 14.2857142857143%; margin-left: 71.4285714285714%; }
+    &[data-skill='khr tcc'] { width: 14.2857142857143%; margin-left: 71.4285714285714%; }
+    &[data-skill='khr scc'] { width: 14.2857142857143%; margin-left: 71.4285714285714%; }
+    &[data-skill='khr db'] { width: 14.2857142857143%; margin-left: 71.4285714285714%; }
+    &[data-skill='khr lp'] { width: 14.2857142857143%; margin-left: 71.4285714285714%; }
+    &[data-skill='khr ai'] { width: 28.5714285714286%; margin-left: 71.4285714285714%; }
+    &[data-skill='khr k1'] { width: 28.5714285714286%; margin-left: 71.4285714285714%; }
+    &[data-skill='khr k2'] { width: 28.5714285714286%; margin-left: 71.4285714285714%; }
+
+    &[data-skill='otg b'] { width: 45%; margin-left: 10%; }
+
+    &[data-skill='rad b'] { width: 45%; margin-left: 55%; }
+
+    &[data-skill='bo cc'] { width: 20%; margin-left: 60%; }
+    &[data-skill='bo cb'] { width: 20%; margin-left: 60%; }
+    &[data-skill='bo bb'] { width: 20%; margin-left: 60%; }
+    &[data-skill='bo ww'] { width: 20%; margin-left: 60%; }
+
+    &[data-skill='doh og'] { width: 50%; margin-left: 50%; }
+
+    &[data-skill='mnl ml'] { width: 33.3333333333333%; margin-left: 66.6666666666667%; }
+
+    &[data-skill='hdc cc'] { width: 40%; margin-left: 60%; }
+    &[data-skill='hdc cb'] { width: 40%; margin-left: 60%; }
+    &[data-skill='hdc bb'] { width: 40%; margin-left: 60%; }
+    &[data-skill='hdc wcb'] { width: 40%; margin-left: 60%; }
+    &[data-skill='hdc wcwc'] { width: 40%; margin-left: 60%; }
+
+    &[data-skill='ind std'] { width: 20%; margin-left: 80%; }
+    &[data-skill='ind c'] { width: 20%; margin-left: 80%; }
+    &[data-skill='ind cl'] { width: 20%; margin-left: 80%; }
+
+    &[data-skill='thn c'] { width: 20%; margin-left: 60%; }
+  }
+
+  .theme-100-50 .chart__bar {
+
+    &[data-skill='rt aps st'] { width: 11.1111111111111%; margin-left: 33.3333333333333%; }
+    &[data-skill='rt aps c c'] { width: 22.2222222222222%; margin-left: 33.3333333333333%; }
+    &[data-skill='rt aps c b'] { width: 33.3333333333333%; margin-left: 33.3333333333333%; }
+    &[data-skill='rt aps b b'] { width: 33.3333333333333%; margin-left: 33.3333333333333%; }
+    &[data-skill='rt aps tc c'] { width: 22.2222222222222%; margin-left: 33.3333333333333%; }
+    &[data-skill='rt aps tb c'] { width: 22.2222222222222%; margin-left: 33.3333333333333%; }
+    &[data-skill='rt aps tc b'] { width: 22.2222222222222%; margin-left: 33.3333333333333%; }
+    &[data-skill='rt aps tb b'] { width: 22.2222222222222%; margin-left: 33.3333333333333%; }
+    &[data-skill='rt aps fc b'] { width: 44.4444444444444%; margin-left: 33.3333333333333%; }
+    &[data-skill='rt aps ch b'] { width: 55.5555555555556%; margin-left: 44.4444444444444%; }
+
+    &[data-skill='rt wfb st'] { width: 14.2857142857143%; margin-left: 42.8571428571429%; }
+    &[data-skill='rt wfb c c'] { width: 14.2857142857143%; margin-left: 42.8571428571429%; }
+    &[data-skill='rt wfb c b'] { width: 28.5714285714286%; margin-left: 42.8571428571429%; }
+    &[data-skill='rt wfb b b'] { width: 28.5714285714286%; margin-left: 42.8571428571429%; }
+    &[data-skill='rt wfb tc c'] { width: 14.2857142857143%; margin-left: 42.8571428571429%; }
+    &[data-skill='rt wfb tb c'] { width: 14.2857142857143%; margin-left: 42.8571428571429%; }
+    &[data-skill='rt wfb tc b'] { width: 14.2857142857143%; margin-left: 42.8571428571429%; }
+    &[data-skill='rt wfb tb b'] { width: 14.2857142857143%; margin-left: 42.8571428571429%; }
+    &[data-skill='rt wfb fc b'] { width: 42.8571428571429%; margin-left: 42.8571428571429%; }
+    &[data-skill='rt wfb ch b'] { width: 42.8571428571429%; margin-left: 57.1428571428571%; }
+
+    &[data-skill='rt krk st'] { width: 40%; margin-left: 60%; }
+    &[data-skill='rt krk c c'] { width: 40%; margin-left: 60%; }
+    &[data-skill='rt krk c b'] { width: 40%; margin-left: 80%; }
+    &[data-skill='rt krk b b'] { width: 60%; margin-left: 80%; }
+    &[data-skill='rt krk tc c'] { width: 40%; margin-left: 60%; }
+    &[data-skill='rt krk tb c'] { width: 40%; margin-left: 80%; }
+    &[data-skill='rt krk tc b'] { width: 40%; margin-left: 80%; }
+    &[data-skill='rt krk tb b'] { width: 20%; margin-left: 80%; }
+    &[data-skill='rt krk fc b'] { width: 40%; margin-left: 80%; }
+    &[data-skill='rt krk ch b'] { width: 40%; margin-left: 80%; }
+
+    &[data-skill='hpf str'] { width: 12.5%; margin-left: 88%; }
+    &[data-skill='hpf scv'] { width: 12.5%; margin-left: 88%; }
+    &[data-skill='hpf std'] { width: 12.5%; margin-left: 88%; }
+    &[data-skill='hpf dh'] { width: 12.5%; margin-left: 88%; }
+    &[data-skill='hpf fr'] { width: 12.5%; margin-left: 88%; }
+    &[data-skill='hpf elm'] { width: 12.5%; margin-left: 88%; }
+    &[data-skill='hpf keg'] { width: 25%; margin-left: 75%; }
+    &[data-skill='hpf tbr'] { width: 25%; margin-left: 75%; }
+
+    &[data-skill='shr str'] { width: 14.2857142857143%; margin-left: 85.7%; }
+    &[data-skill='shr scv'] { width: 14.2857142857143%; margin-left: 85.7%; }
+    &[data-skill='shr std'] { width: 14.2857142857143%; margin-left: 85.7%; }
+    &[data-skill='shr dh'] { width: 14.2857142857143%; margin-left: 85.7%; }
+    &[data-skill='shr fr'] { width: 14.2857142857143%; margin-left: 85.7%; }
+    &[data-skill='shr elm'] { width: 14.2857142857143%; margin-left: 85.7%; }
+    &[data-skill='shr tbr'] { width: 28.56%; margin-left: 71.4285714285714%; }
+
+    &[data-skill='ost ss'] { width: 20%; margin-left: 80%; }
+    &[data-skill='ost sl'] { width: 20%; margin-left: 80%; }
+    &[data-skill='ost sb'] { width: 20%; margin-left: 80%; }
+    &[data-skill='ost ll'] { width: 20%; margin-left: 80%; }
+    &[data-skill='ost bb'] { width: 20%; margin-left: 80%; }
+    &[data-skill='ost bl'] { width: 20%; margin-left: 80%; }
+
+    &[data-skill='rot gsb'] { width: 25%; margin-left: 75%; }
+    &[data-skill='rot gstc'] { width: 25%; margin-left: 75%; }
+    &[data-skill='rot gsc'] { width: 25%; margin-left: 75%; }
+    &[data-skill='rot gstb'] { width: 25%; margin-left: 75%; }
+    &[data-skill='rot sb'] { width: 12.5%; margin-left: 88%; }
+    &[data-skill='rot tb'] { width: 25%; margin-left: 75%; }
+    &[data-skill='rot c'] { width: 12.5%; margin-left: 88%; }
+    &[data-skill='rot tc'] { width: 25%; margin-left: 75%; }
+    &[data-skill='rot bw'] { width: 25%; margin-left: 75%; }
+    &[data-skill='rot tbw'] { width: 25%; margin-left: 75%; }
+
+    &[data-skill='khr bit'] { width: 14.2857142857143%; margin-left: 85.7142857142857%; }
+    &[data-skill='khr std'] { width: 14.2857142857143%; margin-left: 85.7142857142857%; }
+    &[data-skill='khr tc'] { width: 14.2857142857143%; margin-left: 85.7142857142857%; }
+    &[data-skill='khr tcc'] { width: 14.2857142857143%; margin-left: 85.7142857142857%; }
+    &[data-skill='khr scc'] { width: 14.2857142857143%; margin-left: 85.7142857142857%; }
+    &[data-skill='khr db'] { width: 14.2857142857143%; margin-left: 85.7142857142857%; }
+    &[data-skill='khr lp'] { width: 14.2857142857143%; margin-left: 85.7142857142857%; }
+    &[data-skill='khr ai'] { width: 14.2857142857143%; margin-left: 85.7142857142857%; }
+    &[data-skill='khr k1'] { width: 14.2857142857143%; margin-left: 85.7142857142857%; }
+    &[data-skill='khr k2'] { width: 14.2857142857143%; margin-left: 85.7142857142857%; }
+
+    &[data-skill='otg b'] { width: 45%; margin-left: 55%; }
+
+    &[data-skill='rad b'] { width: 45%; margin-left: 55%; }
+
+    &[data-skill='bo cc'] { width: 20%; margin-left: 80%; }
+    &[data-skill='bo cb'] { width: 20%; margin-left: 80%; }
+    &[data-skill='bo bb'] { width: 20%; margin-left: 80%; }
+    &[data-skill='bo ww'] { width: 20%; margin-left: 80%; }
+
+    &[data-skill='doh og'] { width: 12%; margin-left: 88%; }
+
+    &[data-skill='mnl ml'] { width: 33.3333333333%; margin-left: 66.6666666666667%; }
+
+    &[data-skill='hdc cc'] { width: 40%; margin-left: 60%; }
+    &[data-skill='hdc cb'] { width: 40%; margin-left: 60%; }
+    &[data-skill='hdc bb'] { width: 40%; margin-left: 60%; }
+    &[data-skill='hdc wcb'] { width: 40%; margin-left: 60%; }
+    &[data-skill='hdc wcwc'] { width: 40%; margin-left: 60%; }
+
+    &[data-skill='ind std'] { width: 20%; margin-left: 80%; }
+    &[data-skill='ind c'] { width: 20%; margin-left: 80%; }
+    &[data-skill='ind cl'] { width: 20%; margin-left: 80%; }
+
+    &[data-skill='thn c'] { width: 20%; margin-left: 80%; }
+  }
+  .theme-default{
+    .chart__label{
+      color: transparent;
+    }
+    .chart__bar{
+      background: transparent;
+    }
+  }
+//Keyframes
+@keyframes anim-lightspeed-in {
+  0%   { 
+    transform: translateX(-200%);
+    opacity: 1; 
+  }
+  100% { 
+    transform: translateX(0);
+    opacity: 1; 
+  }
+}
