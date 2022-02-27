@@ -1,0 +1,47 @@
+//Greatest Skate Roads
+.image-container {
+    position: relative;
+  a {
+   all: initial;
+  	* {
+    	//all: unset;
+  	}
+  }
+  a:after {
+   all: initial;
+  	* {
+    	all: unset;
+  	}
+  }
+}
+.image-container .after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+}
+.image-container:hover .after {
+    display: block;
+    background: rgba(0, 0, 0, .6);
+    width: 100%;
+    height: 98%;
+  	left: 0;
+}
+.image-container .after .map{
+  	position: absolute;
+    right: 0px;
+}
+.image-container .after .bottom-right {
+    position: absolute;
+    bottom: 8px;
+    right: 16px;
+  	color: white;
+  	font-family: Poppins, "HelveticaNeue","Helvetica Neue",sans-serif;
+}
+
+.image-container .bottom-left {
+  position: absolute;
+  bottom: 8px;
+  left: 16px;
+  color: white;
+}
